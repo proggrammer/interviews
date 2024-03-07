@@ -1,11 +1,9 @@
 package org.example;
 
-import org.junit.jupiter.api.Assertions;
+import org.example.util.Pair;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CheckedExceptionInLambdaTest {
 
