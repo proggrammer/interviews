@@ -22,6 +22,6 @@ class CollatzConjectureTest {
     @Test
     void collatzStep() {
         String v = CollatzConjecture.collatzStep("1");
-        Assertions.assertEquals(v, 100);
+        Assertions.assertEquals(v, "100");
     }
 }
