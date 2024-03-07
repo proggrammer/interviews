@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.util.Pair;
 import org.junit.jupiter.api.Test;
+import org.example.util.CheckedConversionException;
 
 import java.util.List;
 

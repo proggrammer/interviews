@@ -1,14 +1,12 @@
 package org.example;
 
-import org.junit.jupiter.api.Assertions;
+import org.example.util.CheckedConversionException;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class UncheckedToCheckedExceptionTest {
 
     @Test
-    void performUncheckedOperation() throws CheckedConversionException {
+    void performUncheckedOperation() {
         try {
             UncheckedToCheckedException.performUncheckedOperation(10, 0);
         } catch (CheckedConversionException e) {

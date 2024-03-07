@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.util.CheckedConversionException;
 import org.example.util.Pair;
 
 import java.util.List;

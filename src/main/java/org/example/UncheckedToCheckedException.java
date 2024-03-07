@@ -1,11 +1,5 @@
 package org.example;
-
-class CheckedConversionException extends Exception {
-    public CheckedConversionException(String message) {
-        super(message);
-    }
-}
-
+import org.example.util.CheckedConversionException;
 public class UncheckedToCheckedException {
     public static int performUncheckedOperation(int a , int b) throws CheckedConversionException {
         try {
