@@ -25,4 +25,6 @@ Thread:
 
 Priority Queue:
     1. Build a Java task scheduler that, in case of task failure, reschedules it a finite number of times while progressively increasing the waiting time for each reschedule exponentially.
- 
+
+B. Problem Solving - DS algo problems - examples are - Greedy, Dynamic, binary search, divide and conquer, backtracking, graph traversal etc.
+====================================================================
