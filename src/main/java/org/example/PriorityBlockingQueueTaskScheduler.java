@@ -5,6 +5,10 @@ import org.example.util.Task;
 import java.util.List;
 import java.util.concurrent.PriorityBlockingQueue;
 
+/**
+ * Build a Java task scheduler that, in case of task failure,
+ * reschedules it a finite number of times while progressively increasing the waiting time for each reschedule exponentially.
+ */
 public class PriorityBlockingQueueTaskScheduler {
     public static void invoke( List<Task> tasksList) {
         PriorityBlockingQueue<Task> taskQueue = new PriorityBlockingQueue<>();

@@ -5,6 +5,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Develop a Java program with three threads: the first thread prints odd integers, the second thread prints even
+ * integers, and the third thread prints delimiters. Ensure synchronization so that the program prints integers from 1
+ * to n with appropriate delimiters.
+ */
 public class SyncThreadOddEvenSpace {
 
     private static final Object lock = new Object();

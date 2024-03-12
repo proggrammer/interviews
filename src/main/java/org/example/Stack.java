@@ -2,6 +2,10 @@ package org.example;
 
 import java.util.LinkedList;
 
+/**
+ * Implement Stack in Java.
+ * @param <T>
+ */
 public class Stack <T>{
     private LinkedList<T> linkedList = new LinkedList<>();
 

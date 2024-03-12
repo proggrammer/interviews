@@ -5,6 +5,9 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Combine multiple async method calls - combine their result in Java.
+ */
 public class CombineMultipleAsyncResults {
 
     public static void invoke(int n) {

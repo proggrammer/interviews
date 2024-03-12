@@ -1,5 +1,9 @@
 package org.example;
 import org.example.util.CheckedConversionException;
+
+/**
+ * Example of unchecked exceptions to checked Exception.
+ */
 public class UncheckedToCheckedException {
     public static int performUncheckedOperation(int a , int b) throws CheckedConversionException {
         try {

@@ -3,6 +3,12 @@ package org.example;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Develop a custom Java map with composite keys, consisting of two individual keys.
+ * @param <K1>
+ * @param <K2>
+ * @param <V>
+ */
 public class CustomMap<K1, K2, V> {
     private static class Pair<K1, K2>   {
         private final K1 key1;
