@@ -9,8 +9,11 @@ class CompressDecompressStringTest {
 
     @Test
     void compressString() {
-        String input = "aabbbbbbbbbbbbbbbbbbccc";
-        String compressedExpected = "a2b18c3";
+        utilTest("aabbbbbbbbbbbbbbbbbbxcccaaa", "a2b18xc3a3");
+        utilTest("abc", "abc");
+    }
+
+    private void utilTest(String input, String compressedExpected)   {
         String compressed = CompressDecompressString.compressString(input);
         Assertions.assertEquals(compressedExpected, compressed);
 
