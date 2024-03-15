@@ -3,39 +3,43 @@ package org.example;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * Arithmatic expression evaluator
+ * //:TODO not correct implementation
+ */
 public class ArithmaticExpressionEvaluator {
     public static double evaluate(String expression) {
         String postfix = infixToPostfix(expression);
         return evaluatePostfix(postfix);
     }
 
-    private static String infixToPostfix(String expression) {
-        StringBuilder result = new StringBuilder();
+    public static String infixToPostfix(String expression) {
+        StringBuilder postfix = new StringBuilder();
         Deque<Character> stack = new ArrayDeque<>();
 
         for (char c : expression.toCharArray()) {
             if (Character.isDigit(c)) {
-                result.append(c);
+                postfix.append(" "+c);
             } else if (c == '(') {
                 stack.push(c);
             } else if (c == ')') {
                 while (!stack.isEmpty() && stack.peek() != '(') {
-                    result.append(stack.pop());
+                    postfix.append(" "+stack.pop());
                 }
                 stack.pop(); // Remove the '('
             } else if (isOperator(c)) { // Operator
                 while (!stack.isEmpty() && precedence(stack.peek()) >= precedence(c)) {
-                    result.append(stack.pop());
+                    postfix.append(" "+stack.pop());
                 }
                 stack.push(c);
             }
         }
 
         while (!stack.isEmpty()) {
-            result.append(stack.pop());
+            postfix.append(" "+stack.pop());
         }
 
-        return result.toString();
+        return postfix.toString();
     }
 
     private static boolean isOperator(char c) {

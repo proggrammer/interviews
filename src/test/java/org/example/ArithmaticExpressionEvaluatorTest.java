@@ -9,7 +9,7 @@ class ArithmaticExpressionEvaluatorTest {
 
     @Test
     void evaluateTest() {
-        String expression = "3 + 4 * 2 / (1 - 5)";
+        String expression = "(2+4) * (4+6)";
         double result = ArithmaticExpressionEvaluator.evaluate(expression);
         Assertions.assertEquals(result, 1);
     }
