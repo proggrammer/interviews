@@ -6,15 +6,15 @@ import java.util.Map;
 /**
  * LRU cache
  */
-public class LRUCache {
-    class Node {
-        int key;
-        int value;
+public class LRUCache<K, V> {
+    private class Node {
+        K key;
+        V value;
         Node prev;
         Node next;
     }
 
-    private final Map<Integer, Node> cache;
+    private final Map<K, Node> cache;
     private final int capacity;
     private Node head;
     private Node tail;
@@ -40,17 +40,17 @@ public class LRUCache {
         node.next.prev = node.prev;
     }
 
-    public int get(int key) {
+    public V get(K key) {
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
             removeNode(node);
             addToHead(node);
             return node.value;
         }
-        return -1;
+        return null;
     }
 
-    public void put(int key, int value) {
+    public void put(K key, V value) {
         if (cache.containsKey(key)) {
             Node node = cache.get(key);
             node.value = value;
