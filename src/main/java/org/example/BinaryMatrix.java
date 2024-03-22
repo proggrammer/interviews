@@ -56,6 +56,47 @@ public class BinaryMatrix {
     }
 
     public static int sizeOfBiggestIsland(int[][] matrix)   {
-        return 0;
+        int maxIslandSize = 0;
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        boolean[][] visited = new boolean[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 1 && !visited[i][j]) {
+                    int islandSize = dfs(matrix, i, j, visited);
+                    maxIslandSize = Math.max(maxIslandSize, islandSize);
+                }
+            }
+        }
+
+        return maxIslandSize;
     }
+
+    private static int dfs(int[][] matrix, int row, int col, boolean[][] visited) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        // Array to represent 8 possible directions (neighbours)
+        int[] dr = {-1, -1, -1, 0, 0, 1, 1, 1};
+        int[] dc = {-1, 0, 1, -1, 1, -1, 0, 1};
+
+        visited[row][col] = true;
+        int islandSize = 1;
+
+        // Explore all 8 neighbours
+        for (int i = 0; i < 8; i++) {
+            int newRow = row + dr[i];
+            int newCol = col + dc[i];
+
+            if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols &&
+                    matrix[newRow][newCol] == 1 && !visited[newRow][newCol]) {
+                islandSize += dfs(matrix, newRow, newCol, visited);
+            }
+        }
+
+        return islandSize;
+    }
+
 }
